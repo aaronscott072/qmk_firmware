@@ -31,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 	[_LAYERS_SYMBOLS] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, 
-        _______, KC_TAB , KC_GRV , KC_TILD, KC_BSLS, KC_PIPE,                      KC_QUOT, KC_UNDS, KC_EQL , KC_LBRC, KC_RBRC, _______,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_DQUO, KC_MINS, KC_PPLS, KC_LCBR, KC_RCBR, _______, 
+        _______, KC_TAB , KC_GRV , KC_TILD, KC_BSLS, KC_PIPE,                      KC_QUOT, KC_MINS, KC_EQL , KC_LBRC, KC_RBRC, _______,
+        _______, XXXXXXX, KC_TILD, XXXXXXX, KC_PIPE, XXXXXXX, _______,    _______, KC_DQUO, KC_UNDS, KC_PPLS, KC_LCBR, KC_RCBR, _______, 
                              _______, _______, _______, _______,                _______, MO(3)  , _______, _______),
 	[_LAYERS_NUM_AND_NAV] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
@@ -106,8 +106,8 @@ void keyboard_post_init_user(void)
         return;
     }
     rgblight_enable_noeeprom(); // enables RGB, without saving settings
-    rgblight_sethsv_noeeprom(HSV_AZURE); // set color without saving
-    rgblight_mode_noeeprom(RGBLIGHT_EFFECT_RAINBOW_MOOD + 1); // set mode without saving, see feature_rgblight.md Effects and Animations for numbers
+    rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 0, RGBLIGHT_SAT_STEP * 15, RGBLIGHT_VAL_STEP * 5); // set H,S,V without saving (each arg is u8)
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL + 0); // set mode without saving, see feature_rgblight.md Effects and Animations for numbers
 }
 #endif
 
@@ -125,7 +125,7 @@ bool oled_task_user(void)
     oled_write_P(PSTR("-----"), false);
     switch (current_layer) {
         case _LAYERS_HOME:        oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb")  : PSTR("67890yuiophjkl;nm,./"), false); break;
-        case _LAYERS_SYMBOLS:     oled_write_P(is_left ? PSTR("     !@#$%T`~\\|     ") : PSTR("     ^&*()'_=[]\"-+{}"), false); break;
+        case _LAYERS_SYMBOLS:     oled_write_P(is_left ? PSTR("     !@#$%T`~\\| ~ | ") : PSTR("     ^&*()'-=[]\"_+{}"), false); break;
         case _LAYERS_NUM_AND_NAV: oled_write_P(is_left ? PSTR("     12345T HPD  EPD")  : PSTR("     67890LDUR  LDR "), false); break;
         case _LAYERS_CONTROLS:    oled_write_P(is_left ? PSTR("     FFFF FFFFBFFFFB")  : PSTR("MMM  VVV PLLLL LLLL "), false); break;
         default:

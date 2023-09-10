@@ -2,16 +2,7 @@
 
 ## Todo
 
-- fw
-  - encoder -> decide/add functionality (ideas in notebook)
-  - oled -> decide/add functionality
-    - would be cool to show symbols/layout on the relevant side ?
-  - leds -> decide/add functionali  ty
-  - in general, peruse the relevant QMK drivers / git `.md`'s for cool stuff to add
-- hw
-  - oled cover
-  - encoder knobs that fit
-  - solder up new mcus
+- 
 
 ## Notes
 

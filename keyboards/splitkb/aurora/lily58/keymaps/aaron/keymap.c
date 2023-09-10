@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_ESC , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSPC, 
         KC_LCTL, HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT, 
-                             KC_LGUI, KC_LALT, TT(1)  , LT(4, KC_SPC),                KC_SPC , TT(2)  , TT(4)  , KC_DEL ),
+                             KC_LGUI, KC_LALT, TT(1)  , LT(4, KC_SPC),                KC_SPC , TT(2)  , KC_DEL , KC_DEL ),
 	[_LAYERS_SYMBOLS] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, 
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                              _______, _______, TT(3)  , _______,                _______, _______, _______, _______),
 	[_LAYERS_CONTROLS] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 
-        XXXXXXX, KC_PSCR, KC_MNXT, KC_VOLU, RGB_HUD, RGB_HUI,                      KC_BRID, KC_BRIU, KC_BTN3, XXXXXXX, KC_ACL2, XXXXXXX, 
+        XXXXXXX, KC_PSCR, KC_MNXT, KC_VOLU, RGB_HUD, RGB_HUI,                      KC_BRID, KC_BRIU, KC_BTN3, KC_F24 , KC_ACL2, XXXXXXX, 
         XXXXXXX, KC_CAPS, KC_MPLY, KC_MUTE, RGB_SAD, RGB_SAI,                      RGB_TOG, KC_BTN1, KC_MS_U, KC_BTN2, KC_ACL1, XXXXXXX, 
         XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, RGB_VAD, RGB_VAI, _______,    _______, RGB_MOD, KC_MS_L, KC_MS_D, KC_MS_R, KC_ACL0, XXXXXXX, 
                              _______, _______, _______, _______,                _______, _______, _______, _______),
@@ -179,10 +179,14 @@ bool oled_task_user(void)
 
 // chords (combos)
 const uint16_t PROGMEM combo_esc[] = {KC_Q, KC_W, COMBO_END};
-//const uint16_t PROGMEM combo_ent[] = {KC_L, KC_SCLN, COMBO_END}; // <-- not working because of home row mods i imagine????
+const uint16_t PROGMEM combo_ent[] = {HOME_L, HOME_SC, COMBO_END};
 const uint16_t PROGMEM combo_bcps[] = {KC_O, KC_P, COMBO_END};
+const uint16_t PROGMEM combo_layer3_enter[] = {KC_U, KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM combo_layer3_exit[] = {KC_BRIU, KC_BTN3, KC_F24, COMBO_END};
 combo_t key_combos[] = {
     COMBO(combo_esc, KC_ESC),
-    //COMBO(combo_ent, KC_ENT),
+    COMBO(combo_ent, KC_ENT),
     COMBO(combo_bcps, KC_BSPC),
+    COMBO(combo_layer3_enter, TG(_LAYERS_CONTROLS)),
+    COMBO(combo_layer3_exit, TO(_LAYERS_HOME)),
 };

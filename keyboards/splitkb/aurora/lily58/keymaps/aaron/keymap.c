@@ -38,21 +38,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 	[_LAYERS_HOME] = LAYOUT(
         KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, 
         KC_ESC , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSPC, 
-        KC_LCTL, HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
+        KC_LCTL, HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , KC_SCLN, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT, 
-                             KC_LGUI, KC_LALT, TT(1)  , LT(4, KC_SPC),                KC_SPC , TT(2)  , KC_DEL , KC_DEL ),
+                             KC_LGUI, KC_LALT, MO(1)  , LT(4, KC_SPC),                KC_SPC , MO(2)  , KC_DEL , KC_DEL ),
 	[_LAYERS_SYMBOLS] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR , KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, 
         _______, KC_TAB , KC_GRV , KC_TILD, KC_BSLS, KC_PIPE,                      KC_QUOT, KC_MINS, KC_EQL , KC_LBRC, KC_RBRC, _______,
         _______, XXXXXXX, KC_TILD, XXXXXXX, KC_PIPE, XXXXXXX, _______,    _______, KC_DQUO, KC_UNDS, KC_PPLS, KC_LCBR, KC_RCBR, _______, 
-                             _______, _______, _______, _______,                _______, TT(3)  , _______, _______),
+                             _______, _______, _______, _______,                _______, MO(3)  , _______, _______),
 	[_LAYERS_NUM_AND_NAV] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
         _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , _______, 
         _______, KC_TAB , XXXXXXX, KC_HOME, KC_PGUP, KC_DEL ,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______, 
         _______, XXXXXXX, XXXXXXX, KC_END , KC_PGDN, KC_DEL , _______,    _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, _______, 
-                             _______, _______, TT(3)  , _______,                _______, _______, _______, _______),
+                             _______, _______, MO(3)  , _______,                _______, _______, _______, _______),
 	[_LAYERS_CONTROLS] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, 
         XXXXXXX, KC_PSCR, KC_MNXT, KC_VOLU, RGB_HUD, RGB_HUI,                      KC_BRID, KC_BRIU, KC_BTN3, KC_F24 , KC_ACL2, XXXXXXX, 

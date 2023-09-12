@@ -1,12 +1,13 @@
 #pragma once
 
 // TT(layer) - Layer Tap-Toggle
-#define TAPPING_TOGGLE 5
+//#define TAPPING_TOGGLE 5 // keymap.c example use: TT(1)
 
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 200
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat
-#define QUICK_TAP_TERM 100 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
+//#define QUICK_TAP_TERM 100 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
+#define QUICK_TAP_TERM 0 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
 
 // Encoder
 #define ENCODER_RESOLUTION 2

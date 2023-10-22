@@ -3,14 +3,13 @@
 // TT(layer) - Layer Tap-Toggle
 //#define TAPPING_TOGGLE 5 // keymap.c example use: TT(1)
 
-//// Configure the global tapping term (default: 200ms)
-//#define TAPPING_TERM 200
+// Configure the global tapping term (default: 200ms)
+#define TAPPING_TERM 200
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat
 ////#define QUICK_TAP_TERM 100 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
 #define QUICK_TAP_TERM 0 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
 
 // copied from https://github.com/benvallack/34-QMK-Ferris-Sweep/blob/main/config.h
-#define TAPPING_TERM 240
 // COMMENTING OUT BELOW TO TRY EACH INDIVIDUALLY, MAY WANT TO TRY QUICK_TAP_TERM??
 // #define TAPPING_FORCE_HOLD
 // #define RETRO_TAPPING

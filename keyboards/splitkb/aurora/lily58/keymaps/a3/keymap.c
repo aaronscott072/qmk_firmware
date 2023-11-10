@@ -12,11 +12,11 @@
 // Left-hand home row mods
 #define HOME_A     KC_A         // LGUI_T(KC_A)
 #define HOME_S     KC_S         // LALT_T(KC_S)
-#define HOME_D     MT(MOD_LGUI,KC_D) // LSFT_T(KC_D)
-#define HOME_F     MT(MOD_LALT,KC_F) // LCTL_T(KC_F)
+#define HOME_D     KC_D         // MT(MOD_LGUI,KC_D) // LSFT_T(KC_D)
+#define HOME_F     KC_F         // MT(MOD_LALT,KC_F) // LCTL_T(KC_F)
 // Right-hand home row mods
-#define HOME_J     MT(MOD_LALT,KC_J) // RCTL_T(KC_J)
-#define HOME_K     MT(MOD_LGUI,KC_K) // RSFT_T(KC_K)
+#define HOME_J     KC_J         // MT(MOD_LALT,KC_J) // RCTL_T(KC_J)
+#define HOME_K     KC_K         // MT(MOD_LGUI,KC_K) // RSFT_T(KC_K)
 #define HOME_L     KC_L         // LALT_T(KC_L)
 #define HOME_SC    KC_SCLN      // RGUI_T(KC_SCLN)
 

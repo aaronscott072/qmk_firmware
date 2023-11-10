@@ -38,9 +38,9 @@ enum {
     _DANCE_02,
     _DANCE_03,
 };
-#define TD_DOT  TD(_DANCE_01) // KC_DOT  KC_EXLM
-#define TD_COMM TD(_DANCE_02) // KC_COMM KC_MINS
-#define TD_SLSH TD(_DANCE_03) // KC_SLSH KC_UNDS
+#define TD_DOT  KC_DOT  // TD(_DANCE_01) // KC_DOT  KC_EXLM
+#define TD_COMM KC_COMM // TD(_DANCE_02) // KC_COMM KC_MINS
+#define TD_SLSH KC_SLSH // TD(_DANCE_03) // KC_SLSH KC_UNDS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {

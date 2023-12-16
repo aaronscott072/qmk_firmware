@@ -47,7 +47,7 @@
 #define RGBLIGHT_SLEEP 	 	                                    // If defined, the RGB lighting will be switched off when the host goes to sleep
 #define RGBLIGHT_SPLIT 	 	                                    // If defined, synchronization functionality for split keyboards is added
 //#define RGBLIGHT_DISABLE_KEYCODES 	                            // If defined, disables the ability to control RGB Light from the keycodes. You must use code functions to control the feature
-#define RGBLIGHT_DEFAULT_MODE 	    RGBLIGHT_MODE_STATIC_LIGHT 	// The default mode to use upon clearing the EEPROM
+#define RGBLIGHT_DEFAULT_MODE 	    RGBLIGHT_MODE_RAINBOW_SWIRL 	// The default mode to use upon clearing the EEPROM
 //#define RGBLIGHT_DEFAULT_HUE 	    0  	                        // The default hue to use upon clearing the EEPROM
 //#define RGBLIGHT_DEFAULT_SAT 	    UINT8_MAX  	                // The default saturation to use upon clearing the EEPROM
 //#define RGBLIGHT_DEFAULT_VAL 	    RGBLIGHT_LIMIT_VAL 	        // The default value (brightness) to use upon clearing the EEPROM
@@ -73,3 +73,7 @@
 #define SPLIT_LAYER_STATE_ENABLE    // This enables syncing of the layer state between both halves
 #define SPLIT_LED_STATE_ENABLE      // This enables syncing of the Host LED status (caps lock, num lock, etc) between both halves
 #endif
+
+// CAPS WORD
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+//#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD

@@ -18,3 +18,6 @@ MOUSEKEY_ENABLE = yes
 
 # https://github.com/benvallack/34-QMK-Ferris-Sweep/blob/main/rules.mk
 TAP_DANCE_ENABLE = yes
+
+# https://github.com/qmk/qmk_firmware/blob/master/docs/feature_caps_word.md
+CAPS_WORD_ENABLE = yes

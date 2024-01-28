@@ -113,8 +113,8 @@ void keyboard_post_init_user(void)
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case _LAYERS_NUM:
-            rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 15, RGBLIGHT_SAT_STEP * 15, RGBLIGHT_VAL_STEP * 15); // set H,S,V without saving (each arg is u8)
-            rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_GRADIENT + 0);
+            //rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 15, RGBLIGHT_SAT_STEP * 15, RGBLIGHT_VAL_STEP * 15); // set H,S,V without saving (each arg is u8)
+            //rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_GRADIENT + 0);
             break;
         case _LAYERS_FN:
             //rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 7, RGBLIGHT_SAT_STEP * 7, RGBLIGHT_VAL_STEP * 7); // set H,S,V without saving (each arg is u8)
@@ -123,8 +123,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case _LAYERS_HOME:
         case _LAYERS_2ND:
         default: // for any other layers, including the default layer
-            rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 0, RGBLIGHT_SAT_STEP * 15, RGBLIGHT_VAL_STEP * 5); // set H,S,V without saving (each arg is u8)
-            rgblight_mode_noeeprom(RGBLIGHT_DEFAULT_MODE); // set mode without saving, see feature_rgblight.md Effects and Animations for numbers
+            //rgblight_sethsv_noeeprom(RGBLIGHT_HUE_STEP * 0, RGBLIGHT_SAT_STEP * 15, RGBLIGHT_VAL_STEP * 5); // set H,S,V without saving (each arg is u8)
+            //rgblight_mode_noeeprom(RGBLIGHT_DEFAULT_MODE); // set mode without saving, see feature_rgblight.md Effects and Animations for numbers
             break;
     }
   return state;

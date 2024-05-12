@@ -47,15 +47,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 	[_LAYERS_HOME] = LAYOUT(
         KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                      KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_BSPC, 
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS, 
-        KC_LCTL, HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
+  OSM(MOD_LCTL), HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , TD_COMM, TD_DOT , TD_SLSH, KC_RSFT, 
-                            KC_RCTL, KC_LGUI, KC_LALT, OSM(MOD_LSFT),           KC_SPC , MO(1)  , KC_RCTL, KC_DEL ),
+                 KC_RCTL, KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , TO(1)  , OSL(1)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
-        _______, KC_ESC , KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , KC_BSPC, _______, 
+        _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , KC_BSPC, _______, 
         _______, KC_TAB , KC_GRV , KC_QUOT, KC_MINS, KC_EQL ,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,
         _______, TO(3)  , KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, _______,    _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, TO(2)  , _______, 
-                             _______, _______, TO(0)  , _______,                _______, _______, _______, _______),
+                             _______, _______, TO(0)  , _______,                _______, TO(0)  , _______, _______),
 	[_LAYERS_NUM] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      KC_PPLS, KC_MINS, KC_ASTR, KC_SLSH, _______, _______,
         _______, KC_ESC , XXXXXXX, KC_BTN3, KC_F24 , KC_ACL2,                      KC_UNDS, KC_7   , KC_8   , KC_9   , KC_BSPC, _______, 
@@ -144,7 +144,7 @@ bool oled_task_user(void)
     // Keys display
     switch (current_layer) {
         case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb CSA^")  : PSTR("67890yuiophjkl;nm,./S1CD "), false); break;
-        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345e~\"_+t`'-=3{}[] CS0^") : PSTR("67890PHEDbLDURePLDR2S0CD "), false); break;
+        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+t`'-=3{}[] CS0^") : PSTR("67890PHEDbLDURePLDR2S0CD "), false); break;
         case _LAYERS_NUM:           oled_write_P(is_left ? PSTR("12345e MMMtMMMM3MMMM CS0A")  : PSTR("+-*/ _789b.456e01232S1CD "), false); break;
         case _LAYERS_FN:            oled_write_P(is_left ? PSTR("FFFFpFFFF FFFFb3   b CS0^")  : PSTR(" vvv  mmm rrrr rrrr2 1CD "), false); break;
         default:

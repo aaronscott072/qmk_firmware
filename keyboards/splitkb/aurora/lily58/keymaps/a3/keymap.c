@@ -49,25 +49,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS, 
   OSM(MOD_LCTL), HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , TD_COMM, TD_DOT , TD_SLSH, KC_RSFT, 
-                 KC_RCTL, KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , OSL(1) , TO(1)  , KC_DEL ),
+                 TO(0)  , KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , OSL(1) , TO(1)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , KC_BSPC, _______, 
         _______, KC_TAB , KC_GRV , KC_QUOT, KC_MINS, KC_EQL ,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,
         _______, TO(3)  , KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, _______,    _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, TO(2)  , _______, 
-                             _______, _______, TO(0)  , _______,                _______, _______, TO(0)  , _______),
+                             TO(0)  , _______, _______, _______,                _______, _______, TO(0)  , _______),
 	[_LAYERS_NUM] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      KC_PPLS, KC_MINS, KC_ASTR, KC_SLSH, _______, _______,
         _______, KC_ESC , XXXXXXX, KC_BTN3, KC_F24 , KC_ACL2,                      KC_UNDS, KC_7   , KC_8   , KC_9   , KC_BSPC, _______, 
         _______, KC_TAB , KC_BTN1, KC_MS_U, KC_BTN2, KC_ACL1,                      KC_DOT , KC_4   , KC_5   , KC_6   , KC_ENT , _______, 
         _______, TO(3)  , KC_MS_L, KC_MS_D, KC_MS_R, KC_ACL0, _______,    _______, KC_0   , KC_1   , KC_2   , KC_3   , TO(2)  , _______, 
-                             _______, _______, TO(0)  , KC_LALT,                _______, TO(1)  , _______, _______),
+                             TO(0)  , _______, _______, KC_LALT,                _______, TO(1)  , _______, _______),
 	[_LAYERS_FN] = LAYOUT(
         XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_PSCR,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,  XXXXXXX, 
         XXXXXXX, KC_F5  , KC_F6  , KC_F7  , KC_F8  , XXXXXXX,                      XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX,  XXXXXXX, 
         KC_CAPS, KC_F9  , KC_F10 , KC_F11 , KC_F12 , KC_BRIU,                      RGB_TOG, RGB_VAI, RGB_SAI, RGB_HUI, XXXXXXX,  XXXXXXX, 
         XXXXXXX, TO(3)  , XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, _______,    _______, RGB_MOD, RGB_VAD, RGB_SAD, RGB_HUD, TO(2)  ,  XXXXXXX, 
-                             _______, _______, TO(0)  , _______,                _______, TO(1)  , _______, _______),
+                             TO(0)  , _______, _______, _______,                _______, TO(1)  , _______, _______),
 };
 
 #ifdef ENCODER_ENABLE
@@ -143,10 +143,10 @@ bool oled_task_user(void)
 
     // Keys display
     switch (current_layer) {
-        case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb CSA^")  : PSTR("67890yuiophjkl;nm,./S11D "), false); break;
-        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+t`'-=3{}[] CS0^") : PSTR("67890PHEDbLDURePLDR2S10D "), false); break;
-        case _LAYERS_NUM:           oled_write_P(is_left ? PSTR("12345e MMMtMMMM3MMMM CS0A")  : PSTR("+-*/ _789b.456e01232S1CD "), false); break;
-        case _LAYERS_FN:            oled_write_P(is_left ? PSTR("FFFFpFFFF FFFFb3   b CS0^")  : PSTR(" vvv  mmm rrrr rrrr2 1CD "), false); break;
+        case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb 0SA^")  : PSTR("67890yuiophjkl;nm,./S11D "), false); break;
+        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+t`'-=3{}[] 0SA^") : PSTR("67890PHEDbLDURePLDR2S10D "), false); break;
+        case _LAYERS_NUM:           oled_write_P(is_left ? PSTR("12345e MMMtMMMM3MMMM 0SAA")  : PSTR("+-*/ _789b.456e01232S1CD "), false); break;
+        case _LAYERS_FN:            oled_write_P(is_left ? PSTR("FFFFpFFFF FFFFb3   b 0SA^")  : PSTR(" vvv  mmm rrrr rrrr2 1CD "), false); break;
         default:
             oled_write_P(PSTR("UNKNW"), false);
             break;

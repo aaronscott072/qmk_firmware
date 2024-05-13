@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS, 
   OSM(MOD_LCTL), HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , TD_COMM, TD_DOT , TD_SLSH, KC_RSFT, 
-                 TO(0)  , KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , OSL(1) , TO(1)  , KC_DEL ),
+                 TO(0)  , KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , MO(1)  , TO(1)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , XXXXXXX, _______, 

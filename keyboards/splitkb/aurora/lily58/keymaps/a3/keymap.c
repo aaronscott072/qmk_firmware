@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                  TO(0)  , KC_LGUI, KC_LALT, OSM(MOD_LSFT),                         KC_SPC , OSL(1) , TO(1)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
-        _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , KC_BSPC, _______, 
-        _______, KC_TAB , KC_GRV , KC_QUOT, KC_MINS, KC_EQL ,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_ENT , _______,
+        _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , XXXXXXX, _______, 
+        _______, XXXXXXX, KC_GRV , KC_QUOT, KC_MINS, KC_EQL ,                      KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, XXXXXXX, _______,
         _______, TO(3)  , KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, _______,    _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, TO(2)  , _______, 
                              TO(0)  , _______, _______, _______,                _______, _______, TO(0)  , _______),
 	[_LAYERS_NUM] = LAYOUT(
@@ -144,7 +144,7 @@ bool oled_task_user(void)
     // Keys display
     switch (current_layer) {
         case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb 0SA^")  : PSTR("67890yuiophjkl;nm,./S11D "), false); break;
-        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+t`'-=3{}[] 0SA^") : PSTR("67890PHEDbLDURePLDR2S10D "), false); break;
+        case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+ `'-=3{}[] 0SA^") : PSTR("67890PHED LDUR PLDR2S10D "), false); break;
         case _LAYERS_NUM:           oled_write_P(is_left ? PSTR("12345e MMMtMMMM3MMMM 0SAA")  : PSTR("+-*/ _789b.456e01232S1CD "), false); break;
         case _LAYERS_FN:            oled_write_P(is_left ? PSTR("FFFFpFFFF FFFFb3   b 0SA^")  : PSTR(" vvv  mmm rrrr rrrr2 1CD "), false); break;
         default:

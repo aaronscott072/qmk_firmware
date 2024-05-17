@@ -4,7 +4,9 @@
 //#define TAPPING_TOGGLE 5 // keymap.c example use: TT(1)
 
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 200
+// Trade-off: faster means holds will trigger quicker, but you have less time to tap/release for the non-hold key
+//            for example, caps-lock as CTRL when held, ESC when tapped -> you will have better CTRL actions, but you need to tap/release quickly for ESC
+#define TAPPING_TERM 120 //200
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat
 ////#define QUICK_TAP_TERM 100 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)
 #define QUICK_TAP_TERM 0 // max = TAPPING_TERM, 0 is optimal for home row mods but disallows double tap for layer toggle (see TAPPING_TOGGLE)

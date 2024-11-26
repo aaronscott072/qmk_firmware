@@ -51,8 +51,10 @@ enum {
 #define TD_SLSH KC_SLSH // TD(_DANCE_03) // KC_SLSH KC_UNDS
 
 #define CAPS KC_LCTL //MT(MOD_LCTL,KC_ESC)
-#define R_TH KC_SPC // LT(1, KC_SPC) // layer 1 on hold, space on tap
-#define L_TH KC_LSFT // OSM(MOD_LSFT) // one-shot mod for shift
+#define Ri_TH LT(1, KC_ENT) // MO(1)
+#define Li_TH KC_LALT
+#define Ro_TH KC_SPC // LT(1, KC_SPC) // layer 1 on hold, space on tap   <---- COULD USE SPACE AS ANOTHER LAYER HOLD LIKE Ri_TH
+#define Lo_TH KC_LSFT // OSM(MOD_LSFT) // one-shot mod for shift
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
@@ -61,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS, 
         CAPS   , HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , TD_COMM, TD_DOT , TD_SLSH, KC_RSFT, 
-                 TO(0)  , KC_LGUI, KC_LALT, L_TH   ,                         R_TH   , MO(1)  , TO(1)  , KC_DEL ),
+                             TO(0)  , KC_LGUI, Li_TH, Lo_TH   ,          Ro_TH   , Ri_TH, TO(1)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , XXXXXXX, _______, 
@@ -333,3 +335,16 @@ tap_dance_action_t tap_dance_actions[] = {
     [_DANCE_02] = ACTION_TAP_DANCE_FN_ADVANCED(_02_on_press, _02_finished, _02_reset),
     [_DANCE_03] = ACTION_TAP_DANCE_FN_ADVANCED(_03_on_press, _03_finished, _03_reset),
 };
+
+// tap hold
+// HOLD_ON_OTHER_KEY_PRESS_PER_KEY def'd in config.h
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case Ri_TH:
+            // Immediately select the hold action when another key is pressed, do not need to wait for tapping term
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}

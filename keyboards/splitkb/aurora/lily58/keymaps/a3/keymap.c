@@ -51,7 +51,7 @@ enum {
 #define TD_SLSH KC_SLSH // TD(_DANCE_03) // KC_SLSH KC_UNDS
 
 #define CAPS KC_LCTL //MT(MOD_LCTL,KC_ESC)
-#define Ri_TH MO(1) // LT(1, KC_ENT) // layer 1 on hold, enter on tap   <---- COULD USE LAYER1 AS TAP FOR ALTERNATIVE FUNCTION
+#define Ri_TH LT(1, KC_ENT) // layer 1 on hold, enter on tap  // MO(1)
 #define Li_TH KC_LALT
 #define Ro_TH KC_SPC // LT(1, KC_SPC) // layer 1 on hold, space on tap   <---- COULD USE SPACE AS A HOLD FOR A LAYER ETC
 #define Lo_TH KC_LSFT // OSM(MOD_LSFT) // one-shot mod for shift

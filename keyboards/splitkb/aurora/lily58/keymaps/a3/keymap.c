@@ -51,9 +51,9 @@ enum {
 #define TD_SLSH KC_SLSH // TD(_DANCE_03) // KC_SLSH KC_UNDS
 
 #define CAPS KC_LCTL //MT(MOD_LCTL,KC_ESC)
-#define Ri_TH LT(1, KC_ENT) // MO(1)
+#define Ri_TH MO(1) // LT(1, KC_ENT) // layer 1 on hold, enter on tap   <---- COULD USE LAYER1 AS TAP FOR ALTERNATIVE FUNCTION
 #define Li_TH KC_LALT
-#define Ro_TH KC_SPC // LT(1, KC_SPC) // layer 1 on hold, space on tap   <---- COULD USE SPACE AS ANOTHER LAYER HOLD LIKE Ri_TH
+#define Ro_TH KC_SPC // LT(1, KC_SPC) // layer 1 on hold, space on tap   <---- COULD USE SPACE AS A HOLD FOR A LAYER ETC
 #define Lo_TH KC_LSFT // OSM(MOD_LSFT) // one-shot mod for shift
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                      KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS, 
         CAPS   , HOME_A , HOME_S , HOME_D , HOME_F , KC_G   ,                      KC_H   , HOME_J , HOME_K , HOME_L , HOME_SC, KC_ENT , 
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_MUTE,    KC_PSCR, KC_N   , KC_M   , TD_COMM, TD_DOT , TD_SLSH, KC_RSFT, 
-                             TO(0)  , KC_LGUI, Li_TH, Lo_TH   ,          Ro_TH   , Ri_TH, TO(1)  , KC_DEL ),
+                             TO(0)  , KC_LGUI, Li_TH, Lo_TH   ,          Ro_TH   , Ri_TH, MO(3)  , KC_DEL ),
     [_LAYERS_2ND] = LAYOUT(
         _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______, 
         _______, KC_TILD, KC_TILD, KC_DQUO, KC_UNDS, KC_PPLS,                      KC_PGUP, KC_HOME, KC_END , KC_DEL , XXXXXXX, _______, 
@@ -157,7 +157,7 @@ bool oled_task_user(void)
 
     // Keys display
     switch (current_layer) {
-        case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb 0SA^")  : PSTR("67890yuiophjkl;nm,./S11D "), false); break;
+        case _LAYERS_HOME:          oled_write_P(is_left ? PSTR("12345qwertasdfgzxcvb 0SA^")  : PSTR("67890yuiophjkl;nm,./S13D "), false); break;
         case _LAYERS_2ND:           oled_write_P(is_left ? PSTR("12345~~\"_+ `'-=3{}[] 0SA^") : PSTR("67890PHED LDUR PLDR2S10D "), false); break;
         case _LAYERS_NUM:           oled_write_P(is_left ? PSTR("12345e MMMtMMMM3MMMM 0S0A")  : PSTR("+-*/ _789b.456e01232S1CD "), false); break;
         case _LAYERS_FN:            oled_write_P(is_left ? PSTR("FFFFpFFFF FFFFb3   b 0S0^")  : PSTR(" vvv  mmm rrrr rrrr2 1CD "), false); break;
